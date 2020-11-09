@@ -9,7 +9,7 @@ public class PrimeImpl implements PrimeService {
     @Override
     public Long findClosestPrimeNumber(Long origin) {
         Long result = 0l;
-        for(Long i = origin ; i > 2 ; i--) {
+        for(Long i = origin - 1 ; i > 2 ; i--) {
             if(isPrimeNumber(i)) {
                 result = i;
                 break;
@@ -20,7 +20,13 @@ public class PrimeImpl implements PrimeService {
 
     @Override
     public boolean isPrimeNumber(Long number) {
-
-        return false;
+        boolean result = true;
+        for (Long i = 2l ; i <= number / 2 ; i++) {
+            if(number % i == 0) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 }
