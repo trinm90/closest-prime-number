@@ -8,11 +8,19 @@ public class PrimeImpl implements PrimeService {
 
     @Override
     public Long findClosestPrimeNumber(Long origin) {
-        return origin;
+        Long result = 0l;
+        for(Long i = origin ; i > 2 ; i--) {
+            if(isPrimeNumber(i)) {
+                result = i;
+                break;
+            }
+        }
+        return result;
     }
 
     @Override
     public boolean isPrimeNumber(Long number) {
+
         return false;
     }
 }

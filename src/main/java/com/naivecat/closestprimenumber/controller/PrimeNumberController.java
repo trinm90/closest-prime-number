@@ -15,9 +15,15 @@ public class PrimeNumberController {
     @Autowired
     private PrimeService primeService;
 
+    /**
+     * Find the prime number which is lower but closest to origin number.
+     * @param origin
+     * @return A prime number
+     */
     @RequestMapping(value = "{origin}", method = RequestMethod.GET)
     public ResponseEntity<Long> findClosestPrimeNumber(@PathVariable("origin") Long origin) {
         Long result = this.primeService.findClosestPrimeNumber(origin);
         return ResponseEntity.ok(result);
     }
+
 }
