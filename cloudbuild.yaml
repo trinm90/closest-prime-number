@@ -4,4 +4,6 @@ steps:
     args: ["test"]
   - name: maven:3-openjdk-11
     entrypoint: mvn
-    args: ["package", "-Dmaven.test.skip=true"]
+    args: ["package",
+           "-Dmaven.test.skip=true",
+           "appengine:deploy"]
