@@ -15,7 +15,7 @@
 	<description>Demo project for finding the closest prime number</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 	<dependencies>
