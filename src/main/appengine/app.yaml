@@ -11,4 +11,4 @@ runtime_config:
 handlers:
 - url: /.*
   script: this field is required, but ignored
-skip_files: app.yaml
+skip_files: ^.*\.bak$
