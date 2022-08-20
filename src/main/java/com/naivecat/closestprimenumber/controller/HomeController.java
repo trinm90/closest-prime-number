@@ -11,7 +11,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<String> findClosestPrimeNumber() {
-        String result = "Hello World";
+        String result = "Hello World from https://www.bachwa.vn/";
         return ResponseEntity.ok(result);
     }
     
