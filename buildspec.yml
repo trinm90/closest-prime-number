@@ -1,24 +1,19 @@
-env: flex
-runtime: java
-runtime_config:
-  jdk: openjdk8
+version: 0.2
 
-resources:
-  cpu: 1
-  memory_gb: 1
-  disk_size_gb: 10
-  volumes:
-    - name: ramdisk1
-      volume_type: tmpfs
-      size_gb: 0.5
-
-handlers:
-  - url: /.*
-    script: this field is required, but ignored
-
-automatic_scaling:
-  min_num_instances: 1
-  max_num_instances: 2
-  cool_down_period_sec: 180
-  cpu_utilization:
-    target_utilization: 0.8
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - target/messageUtil-1.0.jar
